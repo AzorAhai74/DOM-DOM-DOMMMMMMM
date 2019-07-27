@@ -1,4 +1,9 @@
 window.addEventListener('DOMContentLoaded', function() {
+    //When the browser first loads, use the DOM to create and insert a button labeled `Add Square` into the body
+    //When the button is clicked, a new `div` should be added to the page
+    //The `div` should be a black square
+    //The squares should flow horizontally across the page  
+    
     let buttonOne = document.createElement('button');
     let buttonOneText = document.createTextNode('Add Square');
     buttonOne.appendChild(buttonOneText);
@@ -48,19 +53,35 @@ window.addEventListener('DOMContentLoaded', function() {
         return randomColors;        
     }
 
+    //When hovering over a square, the value of the square's `id`
+    //should display centered in the square 
+
     function divSquareListeners(div) {
         div.addEventListener('mouseover', function(){
             let textId = document.createTextNode(div.id.toString());
             div.appendChild(textId); 
         });
 
+    //and disappear when the cursor is no longer over the square
+
         div.addEventListener('mouseout', function(){
             div.removeChild(div.firstChild);
         });
 
+    //When a square is clicked, it should change to a random background color
+    //(You can randomly choose from a set of colors you predefine if you wish)*See line 18 and 41-53*
+
         div.addEventListener('click', function() {
             div.style.backgroundColor = randomColors();
         });
+
+    //When a square is double clicked, the following should occur:
+    //If the `id` of the square is even:
+    //The square after the clicked square should be removed from the page
+    //If there isn't a square after the clicked square, display an alert indicating so
+    //If the `id` of the square is odd:
+    //The square before the clicked square should be removed from the page
+    //If there isn't a square before the clicked square, display an alert indicating so
 
         div.addEventListener('dblclick', function() {
             let squareLength = document.getElementsByClassName('squares').length;
@@ -82,10 +103,7 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-    };
-
-
-    
+    };  
     
     
 });
