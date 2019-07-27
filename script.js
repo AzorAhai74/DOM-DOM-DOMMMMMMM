@@ -62,7 +62,27 @@ window.addEventListener('DOMContentLoaded', function() {
             div.style.backgroundColor = randomColors();
         });
 
-    }
+        div.addEventListener('dblclick', function() {
+            let squareLength = document.getElementsByClassName('squares').length;
+            let squareAfter = document.getElementById(div.id).nextElementSibling;
+            let squareBefore = document.getElementById(div.id).previousElementSibling;
+
+            if (div.id % 2 == 0) {
+                if (div.id >= squareLength) {
+                    alert('There are no squares after this');
+                } else {
+                    squareAfter.parentNode.removeChild(squareAfter);
+                }
+            } else {
+                if (squareBefore == null) {
+                    alert('There are no squares before this');
+                } else {
+                    squareBefore.parentNode.removeChild(squareBefore);
+                }
+            }
+        });
+
+    };
 
 
     
