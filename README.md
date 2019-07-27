@@ -16,7 +16,7 @@ Covalence
     * All of these `div` elements added to the page should share a single class name of your choosing
     * Each `div` should have an `id` with a numerical value equivalent to the number of squares that are in the page when the `Add Square` button is clicked
         * Ex: There are already 7 squares on the page. When the button is clicked, another square should be added to the page, and it should have `id="7"`.
-        * In this lab, you may run into scenarios where you will have multiple elements with the same `id`; that is fine.
+        * In this lab, you may run into scenarios where you will have multiple elements with the same `id`; that is fine
     * When hovering over a square, the value of the square's `id` should display centered in the square, and disappear when the cursor is no longer over the square
     * When a square is clicked, it should change to a random background color (You can randomly choose from a set of colors you predefine if you wish)
     * When a square is double clicked, the following should occur:
